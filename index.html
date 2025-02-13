@@ -4,73 +4,48 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Our Precious Moments</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            background-color: #ADD8E6;
-            margin: 0;
-            padding: 0;
-        }
-        h1 {
-            font-size: 24px;
-            font-weight: bold;
-            margin-top: 20px;
-        }
-        h2 {
-            font-size: 18px;
-            font-weight: normal;
-        }
-        .container {
-            width: 80%;
-            margin: 20px auto;
-        }
-        .gallery {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            flex-wrap: wrap;
-        }
-        .box {
-            width: 250px;
-            height: 250px;
-            background-color: white;
-            border-radius: 10px;
-            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
-        }
-        .button {
-            background-color: white;
-            color: black;
-            padding: 10px 20px;
-            border: none;
-            font-size: 16px;
-            cursor: pointer;
-            margin: 20px;
-            border-radius: 5px;
-            transition: 0.3s;
-        }
-        .button:hover {
-            background-color: black;
-            color: white;
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+
+    <!-- Background Music -->
+    <audio id="bg-music" autoplay loop>
+        <source src="mama.mp3" type="audio/mpeg">
+        Your browser does not support the audio tag.
+    </audio>
+
+
     <h1>OUR PRECIOUS MOMENTS TOGETHER MOM ❤️</h1>
     <h2>A Collection of Our Most Cherished Memories</h2>
     <button class="button" onclick="readLetter()">Read my Letter</button>
+    
     <div class="container">
-        <div class="gallery">
-            <div class="box"></div>
-            <div class="box"></div>
-            <div class="box"></div>
+        <div class="gallery-wrapper">
+            <div class="gallery">
+                <div class="box"><img src="image (1).jpg" alt="Memory 1"></div>
+                <div class="box"><video src="WhatsApp Video 2025-02-13 at 09.31.52_b2005d08.mp4" autoplay loop muted></video></div>
+                <div class="box"><img src="image (10).jpg" alt="Memory 2"></div>
+                <div class="box"><img src="image (11).jpg" alt="Memory 3"></div>
+                <div class="box"><img src="image (9).jpg" alt="Memory 3"></div>
+                <div class="box"><img src="image (5).jpg" alt="Memory 3"></div>
+                <div class="box"><img src="image (6).jpg" alt="Memory 3"></div>
+                <div class="box"><img src="image (2).jpg" alt="Memory 3"></div>
+                <div class="box"><img src="image (3).jpg" alt="Memory 3"></div>
+                <div class="box"><img src="image (4).jpg" alt="Memory 3"></div>
+                <div class="box"><img src="image (7).jpg" alt="Memory 3"></div>
+                <div class="box"><img src="image (8).jpg" alt="Memory 3"></div>
+                <div class="box"><img src="image (9).jpg" alt="Memory 3"></div>
+            </div>
         </div>
     </div>
-    <script>
-        function readLetter() {
-            alert('Opening your heartfelt letter...');
-            window.location.href = 'letter.html'; // Change this to your actual letter page
-        }
+
+    <script src="script.js">
+        let audio = document.getElementById('bg-music');
+        document.body.addEventListener('click', function () {
+            if (audio.paused) {
+                audio.play().catch(error => console.log('Autoplay blocked:', error));
+            }
+        });
     </script>
 </body>
 </html>

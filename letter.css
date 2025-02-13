@@ -1,0 +1,52 @@
+body {
+    background-color: #AFC9FF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 150vh;
+    margin: 0;
+    padding: 20px; /* Prevents content from touching screen edges */
+    box-sizing: border-box;
+}
+
+.book {
+    width: 90%;
+    max-width: 600px;
+    height: auto;
+    background: white;
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    padding: 20px; /* Adjust padding to ensure visibility */
+}
+
+.page {
+    flex: 1;
+    padding: 20px;
+    position: relative;
+    word-wrap: break-word; /* Ensures text wraps properly */
+    overflow: hidden;
+}
+
+.letter {
+    line-height: 1.6;
+    text-align: justify;
+    margin: 0;
+    font-family: 'Heartland', cursive;
+    font-size: 20px; /* Adjust for readability */
+    color: #D72638; /* Romantic red shade */
+}
+
+/* Mobile responsiveness */
+@media screen and (max-width: 600px) {
+    .book {
+        width: 100%;
+        padding: 15px;
+    }
+    .letter {
+        font-size: 14px; /* Slightly smaller font for better fit */
+        line-height: 1.5;
+    }
+}
