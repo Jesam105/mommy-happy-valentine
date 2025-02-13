@@ -7,6 +7,12 @@
     <link rel="stylesheet" href="letter.css">
 </head>
 <body>
+    <!-- Background Music -->
+    <audio id="bg-music" autoplay loop>
+        <source src="kenny.mp3" type="audio/mpeg">
+        Your browser does not support the audio tag.
+    </audio>
+
     <div class="book">
         <div class="page">
             <p class="letter">
@@ -26,5 +32,17 @@
         </div>
         <a href="index.html" class="back-home">Back to Home</a>
     </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            let audio = document.getElementById("bg-music");
+
+            // Ensure autoplay starts after user interaction
+            document.body.addEventListener("click", function () {
+                if (audio.paused) {
+                    audio.play().catch(error => console.log("Autoplay blocked:", error));
+                }
+            });
+        });
+    </script>
 </body>
 </html>
