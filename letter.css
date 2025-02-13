@@ -3,11 +3,13 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 150vh;
+    min-height: 100vh; /* Allows content to grow beyond the viewport */
     margin: 0;
     padding: 20px; /* Prevents content from touching screen edges */
     box-sizing: border-box;
+    overflow-y: auto; /* Enables scrolling if content is too long */
 }
+
 
 .book {
     width: 90%;
@@ -30,23 +32,46 @@ body {
     overflow: hidden;
 }
 
-.letter {
-    line-height: 1.6;
-    text-align: justify;
-    margin: 0;
-    font-family: 'Heartland', cursive;
-    font-size: 20px; /* Adjust for readability */
-    color: #D72638; /* Romantic red shade */
+.back-home {
+    text-decoration: none;
+    color: black;
+    font-size: 1.2rem;
+    padding: 12px 25px;
+    border-radius: 10px;
+    transition: all 0.3s ease-in-out;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: fit-content;
+    background-color: #AFC9FF;
+    margin: 30px auto; /* Centers the button */
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
+}
+
+.back-home:hover {
+    transform: scale(1.05);
 }
 
 /* Mobile responsiveness */
 @media screen and (max-width: 600px) {
-    .book {
-        width: 100%;
-        padding: 15px;
+    .back-home {
+        font-size: 1rem;
+        padding: 10px 20px;
     }
-    .letter {
-        font-size: 14px; /* Slightly smaller font for better fit */
-        line-height: 1.5;
-    }
+}
+
+@font-face {
+    font-family: 'Heartland';
+    src: url('fonts/Heartland.ttf') format('truetype'); /* Adjust path if necessary */
+    font-weight: normal;
+    font-style: normal;
+}
+
+.letter {
+    line-height: 1.6;
+    /* text-align: justify; */
+    margin: 0;
+    font-family: 'Heartland', cursive;
+    font-size: 20px; /* Adjust for readability */
+    color: #D72638; /* Romantic red shade */
 }
